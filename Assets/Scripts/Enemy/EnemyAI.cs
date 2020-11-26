@@ -58,7 +58,7 @@ public class EnemyAI : MonoBehaviour
      */
      private NavMeshAgent agent;//This zombie's nav mesh agent
      private Animator Anim;//This zombie's animator
-     [SerializeField]private Transform player = null;//Player position/transform
+     [SerializeField] private Transform player = null;//Player position/transform
      private Vector3 lastKnownPos = Vector3.zero;//Last known player position
      private AudioSource SNDSource;//zombieHead should always have 2 audioSources
  

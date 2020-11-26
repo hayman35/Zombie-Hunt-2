@@ -7,15 +7,17 @@ public class PlayerCameraRaycasting : MonoBehaviour
 {
    public float raycastDistance = 7f; 
    private ILootable currentItem;
-
+   private int maxWeps = 1;
+ 
    private void Update() 
    {
        HandleRayCast();
        if(Input.GetKeyDown(KeyCode.E))
        {
-           if(currentItem != null)
+           if((currentItem != null) && maxWeps == 1)
            {
            currentItem.OnInteract();
+           maxWeps++;
            }
        }
    }

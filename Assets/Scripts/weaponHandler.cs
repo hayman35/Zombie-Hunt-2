@@ -13,6 +13,8 @@ public class weaponHandler : MonoBehaviour
 
     private int cur = 0;
 
+    private int maxWeapons = 1;
+
     private void Awake() 
     {
         if(instance == null)
@@ -41,13 +43,17 @@ public class weaponHandler : MonoBehaviour
 
     public void PickUpGun(WeaponScript gun)
     {
-        
+        if(maxWeapons == 1)
+        {
         weapons[1] = Instantiate(gun.gameObject,transform);
         weapons[1].SetActive(false);
-        
+        maxWeapons++;
+        }
     }
 
     IEnumerator SwitchWeapon () {
+        if(maxWeapons == 2)
+        {
 		//Play ther current weapon's Lower animation
 		weapons [cur].GetComponent<Animator> ().CrossFade ("Lower",0.15f);
 
@@ -67,6 +73,7 @@ public class weaponHandler : MonoBehaviour
 
 		//Play ther current weapon's Raise animation
 		weapons [cur].GetComponent<Animator> ().CrossFade ("Raise",0f);
+        }
 	}
 
 }

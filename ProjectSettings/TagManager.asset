@@ -9,6 +9,7 @@ TagManager:
   - Body
   - wanderManager
   - DeadPlayer
+  - Weapon
   layers:
   - Default
   - TransparentFX
